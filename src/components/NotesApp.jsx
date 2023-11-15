@@ -29,18 +29,19 @@ class NotesApp extends React.Component {
 
     onAddNoteHandler({ title, body }) {
         this.setState((prevState) => {
-            notes: [
-                ...prevState.notes,
-                {
-                    id: +new Date(),
-                    title,
-                    body,
-                    createdAt: new Date().toISOString,
-                    archived: false,
-                }
-            ]
-        })
-        console.log(this.state.notes);
+            return {
+                notes: [
+                    ...prevState.notes,
+                    {
+                        id: +new Date(),
+                        title,
+                        body,
+                        createdAt: new Date().toISOString,
+                        archived: false,
+                    }
+                ]
+            }
+        });
     }
 
     onDeleteHandler(id) {

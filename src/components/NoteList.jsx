@@ -12,8 +12,9 @@ function NoteList({ notes, onDelete, onArchive, onActive }) {
         <div className="notes-list">
             {
                 notes.map((note) => {
-                    <NoteItem key={note.id} {...note} onDelete={onDelete} onArchive={onArchive} onActive={onActive} />
-                    console.log(note);
+                    return (
+                        <NoteItem key={note.id} {...note} onDelete={onDelete} onArchive={onArchive} onActive={onActive} />
+                    )
                 })
             }
         </div>
